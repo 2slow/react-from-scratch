@@ -8,7 +8,7 @@ Just `git clone` & `npm install`:
 
 ```
 git clone https://github.com/2slow/react-from-scratch.git
-cd webpack-black-triangle
+cd react-from-scratch
 npm install
 ```
 
