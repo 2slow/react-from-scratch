@@ -21,3 +21,10 @@ npm start
 ```
 
 And open the url localhost:3006 (because :8080 is too mainstream)
+
+
+Build project (in dist directory by default): 
+
+```
+npm run build
+```
