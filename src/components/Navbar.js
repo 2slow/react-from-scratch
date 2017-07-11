@@ -18,7 +18,7 @@ class Navbar extends Component {
         const {} = this.props;
         return (
             <div className="navbar">
-                <h1>Hello world!</h1>
+                <h1>React from scratch</h1>
             </div>
         );
     }
