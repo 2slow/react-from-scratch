@@ -19,7 +19,7 @@ class MainContent extends Component {
         return (
             <div className="main-content">
                 <h2>Well done</h2>
-                <p>Here is your Redux / React / Webpack App!</p>
+                <p>Here is your React / Webpack App!</p>
             </div>
         );
     }
