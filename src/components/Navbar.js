@@ -1,12 +1,12 @@
 import React, { Component, PropTypes} from 'react';
 
-class App extends Component {
+class Navbar extends Component {
     constructor (props, context) {
         super(props, context);
     }
 
     componentWillMount () {
-        const styles = require('./less/App.less');
+        const styles = require('./less/Navbar.less');
     }
 
     componentWillReceiveProps (nextProps) {
@@ -17,11 +17,11 @@ class App extends Component {
         var self = this;
         const {} = this.props;
         return (
-            <div className="app">
-                {self.props.children}
+            <div className="navbar">
+                <h1>Hello world!</h1>
             </div>
         );
     }
 }
 
-export default App;
+export default Navbar;

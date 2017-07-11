@@ -3,15 +3,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from "./components/App";
-import Form from "./components/Form";
-import Door from "./components/Door";
+import MainContent from "./components/MainContent";
+import Navbar from "./components/Navbar";
 
 const target = document.getElementById('root');
 
 const node = (
     <App>
-        <Form/>
-        <Door/>
+        <Navbar/>
+        <MainContent/>
     </App>
 );
 

@@ -1,12 +1,12 @@
 import React, { Component, PropTypes} from 'react';
 
-class App extends Component {
+class MainContent extends Component {
     constructor (props, context) {
         super(props, context);
     }
 
     componentWillMount () {
-        const styles = require('./less/App.less');
+        const styles = require('./less/MainContent.less');
     }
 
     componentWillReceiveProps (nextProps) {
@@ -17,11 +17,12 @@ class App extends Component {
         var self = this;
         const {} = this.props;
         return (
-            <div className="app">
-                {self.props.children}
+            <div className="main-content">
+                <h2>Well done</h2>
+                <p>Here is your Redux / React / Webpack App!</p>
             </div>
         );
     }
 }
 
-export default App;
+export default MainContent;

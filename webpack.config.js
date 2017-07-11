@@ -1,31 +1,43 @@
 var path = require('path');
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+    plugins: [
+        new webpack.optimize.ModuleConcatenationPlugin(),
+        new HtmlWebpackPlugin({
+            template : __dirname + '/src/index.html',
+            hash     : true,
+            filename : 'index.html',
+            inject   : 'body'
+        })
+    ],
     entry: [
         'babel-polyfill',
         './src/main',
         'webpack-dev-server/client?http://localhost:3006'
     ],
     output: {
-        publicPath: "/",
-        path:  __dirname,
-        filename: 'main.js'
+        path:  __dirname + "/dist",
+        filename: 'main.[hash].js'
     },
-    debug: true,
     module: {
-        loaders: [
-            {
-                test: /.jsx?$/,
-                loader: 'babel-loader',
-                include: path.join(__dirname, 'src'),
-                query: {
-                    plugins: ['transform-runtime'],
-                    presets: ['es2015', 'stage-0', 'react']
-                }
-            }, {
+        rules: [{
+            test: /.jsx?$/,
+            loader: 'babel-loader',
+            include: path.join(__dirname, 'src'),
+            query: {
+                plugins: ['transform-runtime', 'transform-react-jsx'],
+                presets: [["env", {
+                    "targets": {
+                        "chrome": 35,
+                        "browsers": [">1%"]
+                    }
+                }]]
+            }
+        }, {
             test: /\.less$/,
-            loader: "style!css!less"
+            loader: "style-loader!css-loader!less-loader"
         }]
     },
     devServer: {
